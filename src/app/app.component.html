@@ -1,0 +1,65 @@
+<p>
+  <mat-toolbar>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item routerLink="products">
+        <mat-icon>forest</mat-icon>
+        <span>Products</span>
+      </a>
+      <a mat-menu-item routerLink="cart">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Shopping Cart</span>
+      </a>
+    </mat-menu>
+    <span class="spacer"></span>
+
+    <span>Bonsai Store App</span>
+    <span class="spacer"></span>
+    <button
+      mat-icon-button
+      class="icon"
+      aria-label="Shopping Cart Icon"
+      routerLink="cart"
+    >
+      <mat-icon matBadge="{{ itemCount }}" matBadgeColor="warn"
+        >shopping_cart
+      </mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="icon"
+      aria-label="archive Icon"
+      routerLink="cart"
+     >
+      <mat-icon matBadge="{{ NumCount }}" matBadgeColor="warn"
+      >archive
+    </mat-icon>
+  </button>
+  </mat-toolbar>
+</p>
+
+<nav>
+  <a
+    class="button"
+    routerLink="products"
+    routerLinkActive="activebutton"
+    ariaCurrentWhenActive="page"
+  >
+    Products
+  </a>
+  <a
+    class="button"
+    routerLink="cart"
+    routerLinkActive="activebutton"
+    aruaCurrentWhenActive="page"
+  >
+    Shopping Cart</a
+  >
+</nav>
+<router-outlet></router-outlet>
